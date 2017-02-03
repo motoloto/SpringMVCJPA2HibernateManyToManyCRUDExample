@@ -48,7 +48,7 @@ public class AppController {
 
 		List<User> users = userService.findAllUsers();
 		model.addAttribute("users", users);
-		return "userslist";
+		return "UserManagement";
 	}
 
 	/**

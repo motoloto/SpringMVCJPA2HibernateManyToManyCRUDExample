@@ -107,6 +107,9 @@ public class User implements Serializable{
 		this.userProfiles = userProfiles;
 	}
 
+	public String getName(){
+		return firstName+" "+ lastName;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
