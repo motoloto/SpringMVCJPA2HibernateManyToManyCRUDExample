@@ -1,4 +1,4 @@
-package com.websystique.springmvc.dao;
+package com.moto.springmvc.dao;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import javax.persistence.NoResultException;
 
 import org.springframework.stereotype.Repository;
 
-import com.websystique.springmvc.model.UserProfile;
+import com.moto.springmvc.model.UserProfile;
 
 
 

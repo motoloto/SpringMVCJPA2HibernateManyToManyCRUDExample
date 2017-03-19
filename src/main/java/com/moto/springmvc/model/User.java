@@ -1,4 +1,4 @@
-package com.websystique.springmvc.model;
+package com.moto.springmvc.model;
 
 import java.io.Serializable;
 import java.util.HashSet;

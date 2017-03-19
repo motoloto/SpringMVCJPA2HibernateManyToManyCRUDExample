@@ -1,8 +1,8 @@
-package com.websystique.springmvc.service;
+package com.moto.springmvc.service;
 
 import java.util.List;
 
-import com.websystique.springmvc.model.User;
+import com.moto.springmvc.model.User;
 
 
 public interface UserService {

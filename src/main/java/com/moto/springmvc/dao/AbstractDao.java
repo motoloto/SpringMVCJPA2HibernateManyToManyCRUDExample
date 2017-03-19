@@ -1,4 +1,4 @@
-package com.websystique.springmvc.dao;
+package com.moto.springmvc.dao;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;

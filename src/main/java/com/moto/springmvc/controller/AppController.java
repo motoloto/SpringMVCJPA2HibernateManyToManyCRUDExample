@@ -1,4 +1,4 @@
-package com.websystique.springmvc.controller;
+package com.moto.springmvc.controller;
 
 import java.util.List;
 import java.util.Locale;
@@ -15,13 +15,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.websystique.springmvc.model.User;
-import com.websystique.springmvc.model.UserProfile;
-import com.websystique.springmvc.service.UserProfileService;
-import com.websystique.springmvc.service.UserService;
+import com.moto.springmvc.model.User;
+import com.moto.springmvc.model.UserProfile;
+import com.moto.springmvc.service.UserProfileService;
+import com.moto.springmvc.service.UserService;
 
 
 

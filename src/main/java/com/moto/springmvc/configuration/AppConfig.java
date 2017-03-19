@@ -1,4 +1,4 @@
-package com.websystique.springmvc.configuration;
+package com.moto.springmvc.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -16,13 +16,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-import com.websystique.springmvc.converter.RoleToUserProfileConverter;
+import com.moto.springmvc.converter.RoleToUserProfileConverter;
 
 
 @Configuration
 @Import(JpaConfiguration.class)
 @EnableWebMvc
-@ComponentScan(basePackages = "com.websystique.springmvc")
+@ComponentScan(basePackages = "com.moto.springmvc")
 public class AppConfig extends WebMvcConfigurerAdapter{
 	
 	

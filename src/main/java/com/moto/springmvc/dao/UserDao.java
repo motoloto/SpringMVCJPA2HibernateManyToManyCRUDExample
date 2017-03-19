@@ -1,8 +1,8 @@
-package com.websystique.springmvc.dao;
+package com.moto.springmvc.dao;
 
 import java.util.List;
 
-import com.websystique.springmvc.model.User;
+import com.moto.springmvc.model.User;
 
 
 public interface UserDao {

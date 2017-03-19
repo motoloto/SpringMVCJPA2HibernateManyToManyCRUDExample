@@ -1,4 +1,4 @@
-package com.websystique.springmvc.configuration;
+package com.moto.springmvc.configuration;
 
 import java.util.Properties;
 
@@ -41,7 +41,7 @@ public class JpaConfiguration {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() throws NamingException {
 		LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
 		factoryBean.setDataSource(dataSource());
-		factoryBean.setPackagesToScan(new String[] { "com.websystique.springmvc.model" });
+		factoryBean.setPackagesToScan(new String[] { "com.moto.springmvc.model" });
 		factoryBean.setJpaVendorAdapter(jpaVendorAdapter());
 		factoryBean.setJpaProperties(jpaProperties());
 		return factoryBean;
