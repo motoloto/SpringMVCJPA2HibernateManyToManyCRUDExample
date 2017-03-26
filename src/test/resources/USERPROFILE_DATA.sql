@@ -1,0 +1,1 @@
+INSERT INTO USER_PROFILE(`id`,`type`) VALUES (1,'ADMIN');
