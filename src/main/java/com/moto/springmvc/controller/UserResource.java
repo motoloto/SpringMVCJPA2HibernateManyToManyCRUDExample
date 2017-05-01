@@ -18,7 +18,8 @@ import com.moto.springmvc.model.User;
 import com.moto.springmvc.service.UserService;
  
 @RestController
-public class UserRestController {
+@RequestMapping("/v2")
+public class UserResource {
  
     @Autowired
     UserService userService;  //Service which will do all data retrieval/manipulation work

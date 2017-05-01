@@ -2,6 +2,7 @@ package com.moto.springmvc.service;
 
 import java.util.List;
 
+import com.moto.springmvc.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,8 +18,14 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	private UserDao dao;
 
+	@Autowired
+	private UserRepository userRepository;
+
+	/*findById
+	* change to use JPA for CRUD
+	* */
 	public User findById(int id) {
-		return dao.findById(id);
+		return userRepository.findById(id);
 	}
 
 	public User findBySSO(String sso) {

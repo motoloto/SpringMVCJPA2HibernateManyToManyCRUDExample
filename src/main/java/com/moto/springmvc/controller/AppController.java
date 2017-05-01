@@ -25,7 +25,7 @@ import com.moto.springmvc.service.UserService;
 
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/v1")
 @SessionAttributes("roles")
 public class AppController {
 
