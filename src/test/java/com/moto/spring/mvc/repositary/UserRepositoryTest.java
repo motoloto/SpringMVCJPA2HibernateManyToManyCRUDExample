@@ -45,7 +45,7 @@ public class UserRepositoryTest  {
         user.setEmail("mt@gmail.com");
         user.setSsoId("902");
         user.setPassword("0000");
-        user.setId(1);
+        user.setId(1L);
         users.add(user);
         assertEquals(users,userRepository.findAll());
 
