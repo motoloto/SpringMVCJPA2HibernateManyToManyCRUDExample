@@ -1,6 +1,8 @@
 package com.websystique.springmvc.configuration;
 
+import org.h2.server.web.WebServlet;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -80,6 +82,15 @@ public class AppConfig extends WebMvcConfigurerAdapter{
     public void configurePathMatch(PathMatchConfigurer matcher) {
         matcher.setUseRegisteredSuffixPatternMatch(true);
     }
-    
+
+	@Configuration
+	public class WebConfiguration {
+		@Bean
+		ServletRegistrationBean h2servletRegistration(){
+			ServletRegistrationBean registrationBean = new ServletRegistrationBean( new WebServlet());
+			registrationBean.addUrlMappings("/console/*");
+			return registrationBean;
+		}
+	}
 }
 
