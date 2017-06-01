@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService{
 	/*findById
 	* change to use JPA for CRUD
 	* */
-	public User findById(int id) {
+	public User findById(Long id) {
 		return userRepository.findById(id);
 	}
 
@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService{
 	 * It will be updated in db once transaction ends. 
 	 */
 	public void updateUser(User user) {
-		User entity = dao.findById(user.getId());
+		User entity = userRepository.findById(user.getId());
 		if(entity!=null){
 			entity.setSsoId(user.getSsoId());
 			entity.setPassword(user.getPassword());
@@ -60,12 +60,22 @@ public class UserServiceImpl implements UserService{
 	}
 
 	public List<User> findAllUsers() {
-		return dao.findAllUsers();
+		return userRepository.findAll();
 	}
 
-	public boolean isUserSSOUnique(Integer id, String sso) {
+	public boolean isUserSSOUnique(Long id, String sso) {
 		User user = findBySSO(sso);
 		return ( user == null || ((id != null) && (user.getId() == id)));
 	}
-	
+
+	@Override
+	public boolean isUserExist(User user) {
+		return userRepository.exists(user.getId());
+	}
+
+	@Override
+	public void deleteAllUsers() {
+		userRepository.deleteAll();
+	}
+
 }

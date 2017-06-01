@@ -1,4 +1,4 @@
-package com.moto.springmvc.controller;
+package com.moto.springmvc.resource;
 
 import java.util.List;
 
@@ -40,7 +40,7 @@ public class UserResource {
     //-------------------Retrieve Single User--------------------------------------------------------
      
     @RequestMapping(value = "/user/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> getUser(@PathVariable("id") int id) {
+    public ResponseEntity<User> getUser(@PathVariable("id") Long id) {
         System.out.println("Fetching User with id " + id);
         User user = userService.findById(id);
         if (user == null) {
@@ -58,10 +58,10 @@ public class UserResource {
     public ResponseEntity<Void> createUser(@RequestBody User user,    UriComponentsBuilder ucBuilder) {
         System.out.println("Creating User " + user.getName());
  
-//        if (userService.isUserExist(user)) {
-//            System.out.println("A User with name " + user.getName() + " already exist");
-//            return new ResponseEntity<Void>(HttpStatus.CONFLICT);
-//        }
+        if (userService.isUserExist(user)) {
+            System.out.println("A User with name " + user.getName() + " already exist");
+            return new ResponseEntity<Void>(HttpStatus.CONFLICT);
+        }
  
         userService.saveUser(user);
  
@@ -74,7 +74,7 @@ public class UserResource {
     //------------------- Update a User --------------------------------------------------------
      
     @RequestMapping(value = "/user/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<User> updateUser(@PathVariable("id") int id, @RequestBody User user) {
+    public ResponseEntity<User> updateUser(@PathVariable("id") Long id, @RequestBody User user) {
         System.out.println("Updating User " + id);
          
         User currentUser = userService.findById(id);
@@ -94,7 +94,7 @@ public class UserResource {
     //------------------- Delete a User --------------------------------------------------------
      
     @RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<User> deleteUser(@PathVariable("id") int id) {
+    public ResponseEntity<User> deleteUser(@PathVariable("id") Long id) {
         System.out.println("Fetching & Deleting User with id " + id);
  
         User user = userService.findById(id);
@@ -113,8 +113,7 @@ public class UserResource {
     @RequestMapping(value = "/user/", method = RequestMethod.DELETE)
     public ResponseEntity<User> deleteAllUsers() {
         System.out.println("Deleting All Users -- Haven't finished yet!");
- 
-//        userService.deleteAllUsers();
+        userService.deleteAllUsers();
         return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
     }
  
